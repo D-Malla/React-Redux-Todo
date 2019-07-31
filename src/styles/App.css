@@ -42,7 +42,7 @@ body {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   display: flex;
-  height: 50px;
+  height: 75px;
 }
 
 #enterTodo input {
@@ -50,7 +50,7 @@ body {
   border: none;
   color: rgb(218,134,115);
   font-size: 40px;
-  height: 50px;
+  height: 75px;
   margin-left: 30px;
   padding-left: 95px;
   width: 100%;
@@ -80,8 +80,8 @@ body {
   background: transparent;
   border: none;
   height: 40px;
-  margin-left: 90px;
-  margin-top: 5px;
+  margin-left: 85px;
+  margin-top: 20px;
   width: 40px;
 }
 
@@ -96,11 +96,49 @@ body {
 
 /* List Elements Styling */
 .todoListItem {
-  border-bottom: .5px solid lightgray;
+  border-top: .5px solid lightgray;
+  font-size: 40px;
   height: 75px;
   list-style: none;
   width: 95%;
-
 }
 
+.delButton {
+  background: transparent;
+  border: none;
+  bottom: 105px;
+  height: 30px;
+  left: 660px;
+  opacity: .3;
+  padding: 0;
+  position: relative;
+  width: 35px;
+}
+
+.delButton:focus {
+  outline: none;
+  
+}
+
+.todoListItem .delButton i {
+  font-size: 40px; 
+}
+
+.todoListItem .delButton i:active {
+  font-size: 39px;
+  transition: font-size .1 ease;
+}
+
+.todoListItem p {
+  bottom: 25px;
+  color: rgb(218,134,115);
+  left: 86px;
+  position: relative;
+}
 /* List Options Styling */
+
+
+::placeholder {
+  color: gray;
+  opacity: .3
+}

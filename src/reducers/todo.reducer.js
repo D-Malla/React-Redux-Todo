@@ -1,5 +1,5 @@
 const initialState = {
-  todos: []
+  todos: [],
 }
 
 export default function(state = initialState, action) {
@@ -12,3 +12,4 @@ export default function(state = initialState, action) {
       return state
   }
 }
+

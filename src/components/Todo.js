@@ -1,5 +1,6 @@
 import React from 'react'
 import { removeTodo } from '../actions/todo.actions'
+import MaterialIcon from 'material-icons-react'
 
 export default props => {
   function deleteTodo() {
@@ -9,7 +10,7 @@ export default props => {
   return (
     <li>
       <p>{props.todoItem}</p>
-      <button onClick={deleteTodo}>Delete Todo</button>
+      <button className='delButton' onClick={deleteTodo}><MaterialIcon icon="clear" /></button>
     </li>
   )
 }

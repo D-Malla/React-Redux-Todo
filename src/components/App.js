@@ -11,7 +11,6 @@ export default props => {
     <Provider store={store}>
       <div>
         <TodoForm />
-
       </div>
     </Provider>
   )
