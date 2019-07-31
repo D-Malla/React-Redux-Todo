@@ -1,0 +1,106 @@
+html {box-sizing:border-box;}
+*, *::before, *::after {box-sizing:inherit;}
+
+
+/* Main Styling */
+body {
+  background-image: linear-gradient(157deg, #bbf0f3 0%, #f6d285 74%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 1000px;
+}
+
+#container {
+  background: rgb(255, 253, 208);
+  border-radius: 15px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  margin: 100px auto;
+  width: 60%
+}
+
+/* Header Styling */
+#mainHeader {
+  background-color: #e09082;
+  background-image: linear-gradient(315deg, #e09082 0%, #f8dba4 74%);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 100px;
+  text-align: center;
+  width: 100%
+}
+
+#mainHeader h1 {
+  color: rgb(255, 253, 208);
+  font-family: 'Dancing Script', 'cursive';
+  padding: 1px 0;
+  font-size: 80px;
+}
+
+/* List Input Styling */
+#enterTodo {
+  background: rgb(255, 253, 208);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  height: 50px;
+}
+
+#enterTodo input {
+  background: transparent;
+  border: none;
+  color: rgb(218,134,115);
+  font-size: 40px;
+  height: 50px;
+  margin-left: 30px;
+  padding-left: 95px;
+  width: 100%;
+}
+
+#enterTodo input:focus {
+  outline: none;
+}
+
+#enterTodo #inputDiv{
+  width: 80%;
+}
+
+#enterTodo #addDiv {
+  width: 20%;
+}
+
+#enterTodo i  {
+  cursor: pointer;
+  font-size: 40px;
+  margin-top: 2px;
+  margin-left: -8px;
+  opacity: .3;
+}
+
+#addDiv #addTodo {
+  background: transparent;
+  border: none;
+  height: 40px;
+  margin-left: 90px;
+  margin-top: 5px;
+  width: 40px;
+}
+
+#addDiv #addTodo:focus {
+  outline: none;
+}
+
+#enterTodo i:active {
+  font-size: 39px;
+  transition: font-size .1 ease;
+}
+
+/* List Elements Styling */
+.todoListItem {
+  border-bottom: .5px solid lightgray;
+  height: 75px;
+  list-style: none;
+  width: 95%;
+
+}
+
+/* List Options Styling */
