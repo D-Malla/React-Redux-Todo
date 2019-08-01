@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { create } from '../actions/todo.actions'
+import { addTodo, setFilter, clearCompleted, markAll } from '../actions/todo.actions'
 import { useSelector } from 'react-redux'
 import Todo from './Todo'
 import '../styles/App.css'
@@ -14,45 +14,58 @@ WebFont.load({
 
 export default props => {
   const [todoItem, setTodoItem] = useState('')
-  const todos = useSelector(appState => appState.todos)
+  const filter = useSelector(appState => appState.filter)
+  const count = useSelector(appState => appState.todos.filter(todo => !todo.checked).length)
+  const allTodosCount = useSelector(appState => appState.todos.length)
+  const todos = useSelector(appState => {
+    const filter = appState.filter
+    
+    switch (filter) {
+      case 'active':
+        return appState.todos.filter(todo => !todo.checked)
+      case 'completed':
+        return appState.todos.filter(todo => todo.checked)
+      default:
+        return appState.todos
+    }
+  })
 
-
-  function createTodo(e) {
-    create(todoItem)
-  }
-
+  
+  
   function handleSubmit(e) {
     e.preventDefault();
-    // call function to add a todo
+    addTodo(todoItem);
     setTodoItem('');
-    }
+  }
 
 
 
   return (
-    <div id='container'>
-      <form onSubmit={handleSubmit} name='myForm'>
-        <header id='mainHeader'>
-          <h1>Goal Digger</h1>
-        </header>
-        <div id='enterTodo'>
-          <div id='inputDiv'>
-            <input type='text' value={todoItem} minLength={4} onChange={e => setTodoItem(e.target.value)} placeholder='Slay the Day! Yassss!' ></input>
+    <form onSubmit={handleSubmit}>
+      <div id='enterTodo'>
+        <span id="clearAll"><MaterialIcon onClick={markAll} icon="keyboard_arrow_down" /></span>
+          <input type='text' value={todoItem} onChange={e => setTodoItem(e.target.value)} placeholder='Slay the Day! Yassss!' ></input>
+          <button id='addTodo' onClick={handleSubmit}><MaterialIcon icon="add_circle_outline" /></button>
+      </div>
+      <div>
+        <ul className="todoListItem">
+          {todos.map(todo => (
+            <Todo key={'todo' + todo.id} id={todo.id} value={todo.value} checked={todo.checked} />
+          ))}
+        </ul>
+        {allTodosCount > 0 ? (
+        <footer>
+          <p id='itemCount'>{count} items left</p>
+          <div>
+            <button className={filter === 'all' ? 'active' : ''} onClick={e => setFilter('all')} type="button">All</button>
+            <button className={filter === 'active' ? 'active' : ''} onClick={e => setFilter('active')} type="button">Active</button>
+            <button className={filter === 'completed' ? 'active' : ''} onClick={e => setFilter('completed')} type="button">Completed</button>
           </div>
-          <div id='addDiv'>
-            <button id='addTodo' onClick={createTodo}><MaterialIcon icon="add_circle_outline" /></button>
-          </div>
-        </div>
-        <div>
-          <ul>
-            {todos.map((todo, id) => (
-              <div>
-                <li className='todoListItem'><Todo key={'todo' + id} {...todo}/></li>
-              </div>
-            ))}
-          </ul>
-        </div>
-      </form>
-    </div>
+          <button onClick={clearCompleted} type="button" id='clearCompleted'>Clear completed</button>
+        </footer>
+        ) : ''}
+        <button style={{display:'none'}} type="submit">Submit</button>
+      </div>
+    </form>
   )
 }

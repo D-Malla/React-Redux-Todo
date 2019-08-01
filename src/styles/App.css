@@ -15,7 +15,7 @@ body {
   border-radius: 15px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
   margin: 100px auto;
-  width: 60%
+  max-width: 800px;
 }
 
 /* Header Styling */
@@ -51,9 +51,12 @@ body {
   color: rgb(218,134,115);
   font-size: 40px;
   height: 75px;
-  margin-left: 30px;
-  padding-left: 95px;
+  padding-left: 60px;
   width: 100%;
+}
+
+#enterTodo #inputDiv i {
+  margin: 0; 
 }
 
 #enterTodo input:focus {
@@ -68,7 +71,25 @@ body {
   width: 20%;
 }
 
-#enterTodo i  {
+#enterTodo #clearAll i  {
+  cursor: pointer;
+  font-size: 40px;
+  margin-top: 24px;
+  padding-left: 20px;
+  opacity: .3;
+
+}
+
+#addTodo {
+  background: transparent;
+  border: none;
+  height: 40px;
+  margin-right: 25px;
+  margin-top: 20px;
+  width: 40px;
+}
+
+#addTodo i {
   cursor: pointer;
   font-size: 40px;
   margin-top: 2px;
@@ -76,16 +97,7 @@ body {
   opacity: .3;
 }
 
-#addDiv #addTodo {
-  background: transparent;
-  border: none;
-  height: 40px;
-  margin-left: 85px;
-  margin-top: 20px;
-  width: 40px;
-}
-
-#addDiv #addTodo:focus {
+#addTodo:focus {
   outline: none;
 }
 
@@ -95,50 +107,163 @@ body {
 }
 
 /* List Elements Styling */
+
+
 .todoListItem {
-  border-top: .5px solid lightgray;
-  font-size: 40px;
-  height: 75px;
+  display: flex;
+  flex-direction: column;
+  font-size: 32px;
+  justify-content: center;
   list-style: none;
+  margin: 0;
+  padding: 0;
   width: 95%;
 }
 
-.delButton {
-  background: transparent;
-  border: none;
-  bottom: 105px;
-  height: 30px;
-  left: 660px;
-  opacity: .3;
-  padding: 0;
-  position: relative;
+.todoListItem li {
+  align-items:center; 
+  border-top:.5px solid rgba(208, 207, 169, .5);
+  display:flex;
+  height:75px;
+  margin-left: 35px;
+}
+
+.todoListItem li input {
+  background: transparent; 
+  border:0;
+  color: rgb(218,134,115); 
+  flex-grow:1;
+  font-size:40px;
+  outline:0;
+  padding-left: 43px;
+}
+
+.todoListItem label {
+  height: 35px;
   width: 35px;
+  border: 1px solid #d8d8d8;
+  border-radius: 50%;
+  margin: 5px 15px 0 -10px;
+  text-align: center;
 }
 
-.delButton:focus {
-  outline: none;
-  
+.todoListItem input[type=checkbox] {
+  display:none;
 }
 
-.todoListItem .delButton i {
-  font-size: 40px; 
+.todoListItem input[type=checkbox]:checked ~ .replace i {
+  color:rgb(10, 184, 203);
+  display:inline;
+  font-weight: bolder;
 }
 
-.todoListItem .delButton i:active {
-  font-size: 39px;
+.todoListItem input[type=checkbox]:checked ~ input {
+  color:rgb(218,134,115);
+  opacity: 0.3;
+  text-decoration: line-through;
+}
+
+.todoListItem input[type=checkbox]:checked ~ input:focus {
+  color: #4d4d4d;
+  text-decoration:none;
+}
+
+.replace {
+  height:30px;
+  width:30px;
+  border:1px solid #d8d8d8;
+  border-radius:50%;
+  margin:0 15px 0 7px;
+  text-align:center;
+}
+
+.replace i {
+  display:none;
+  line-height:34px;
+}
+
+.todoListItem li button {
+  background: transparent;
+  color: rgba(175,47,47,.50);
+  border: 0;
+  outline: 0;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 30px;
+  margin-right: -13px;
+  margin-top: 11px;
+  display: none;
+}
+
+.todoListItem li button:focus {
+  font-size: 28px;
   transition: font-size .1 ease;
 }
 
-.todoListItem p {
-  bottom: 25px;
-  color: rgb(218,134,115);
-  left: 86px;
-  position: relative;
+.todoListItem li:hover button {
+  display:inline;
 }
+
+/* Footer Styling */
+footer {
+  align-items: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top: .5px solid rgba(208, 207, 169, .5);
+  display: flex;
+  font-size:14px;
+  font-weight:300;
+  justify-content: space-between;
+  margin-left: 35px;
+  width: 90.5%;
+}
+
+form footer div {
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
+form footer p {
+  margin-left:20px;
+  color: rgba(175,47,47,.50); 
+}
+
+form footer button {
+  background:transparent;
+  border:0;
+  color:lightgray;
+  cursor:pointer;
+  font-weight: inherit;
+  height:26px;
+}
+
+form footer button {
+  margin-right:20px;
+  opacity: .8;
+}
+
+form footer button.active {
+  border-left:1px solid rgba(175,47,47,.50);
+  border-right:1px solid rgba(175,47,47,.50);
+  color: rgba(175,47,47,.50);
+  opacity: 1;
+  
+}
+
+
+form footer #clearCompleted {
+  color: rgba(175,47,47,.50);
+  opacity: 1;
+}
+
+button {
+  outline:0;
+}
+
 /* List Options Styling */
-
-
-::placeholder {
+ ::placeholder {
   color: gray;
   opacity: .3
 }
+
