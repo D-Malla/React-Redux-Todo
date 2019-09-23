@@ -24,7 +24,7 @@ export default props => {
       <label htmlFor={'check' + props.id} className="replace">
         <MaterialIcon icon="done" />
       </label>
-      <input value={value} onChange={e => setValue(e.target.value)} />
+      <input value={value} disabled onChange={e => setValue(e.target.value)} />
       <button type="button" onClick={remove}>X</button>
     </li>
   )

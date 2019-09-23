@@ -1,13 +1,18 @@
-html {box-sizing:border-box;}
-*, *::before, *::after {box-sizing:inherit;}
-
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
 /* Main Styling */
 body {
   background-image: linear-gradient(157deg, #bbf0f3 0%, #f6d285 74%);
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  height: 1000px;
+  height: 598px;
 }
 
 #container {
@@ -26,12 +31,12 @@ body {
   border-top-right-radius: 15px;
   height: 100px;
   text-align: center;
-  width: 100%
+  width: 100%;
 }
 
 #mainHeader h1 {
   color: rgb(255, 253, 208);
-  font-family: 'Dancing Script', 'cursive';
+  font-family: "Dancing Script", "cursive";
   padding: 1px 0;
   font-size: 80px;
 }
@@ -48,7 +53,7 @@ body {
 #enterTodo input {
   background: transparent;
   border: none;
-  color: rgb(218,134,115);
+  color: rgb(218, 134, 115);
   font-size: 40px;
   height: 75px;
   padding-left: 60px;
@@ -56,14 +61,14 @@ body {
 }
 
 #enterTodo #inputDiv i {
-  margin: 0; 
+  margin: 0;
 }
 
 #enterTodo input:focus {
   outline: none;
 }
 
-#enterTodo #inputDiv{
+#enterTodo #inputDiv {
   width: 80%;
 }
 
@@ -71,13 +76,12 @@ body {
   width: 20%;
 }
 
-#enterTodo #clearAll i  {
+#enterTodo #clearAll i {
   cursor: pointer;
   font-size: 40px;
   margin-top: 24px;
   padding-left: 20px;
-  opacity: .3;
-
+  opacity: 0.3;
 }
 
 #addTodo {
@@ -94,7 +98,7 @@ body {
   font-size: 40px;
   margin-top: 2px;
   margin-left: -8px;
-  opacity: .3;
+  opacity: 0.3;
 }
 
 #addTodo:focus {
@@ -103,11 +107,10 @@ body {
 
 #enterTodo i:active {
   font-size: 39px;
-  transition: font-size .1 ease;
+  transition: font-size 0.1 ease;
 }
 
 /* List Elements Styling */
-
 
 .todoListItem {
   display: flex;
@@ -121,20 +124,20 @@ body {
 }
 
 .todoListItem li {
-  align-items:center; 
-  border-top:.5px solid rgba(208, 207, 169, .5);
-  display:flex;
-  height:75px;
+  align-items: center;
+  border-top: 0.5px solid rgba(208, 207, 169, 0.5);
+  display: flex;
+  height: 75px;
   margin-left: 35px;
 }
 
 .todoListItem li input {
-  background: transparent; 
-  border:0;
-  color: rgb(218,134,115); 
-  flex-grow:1;
-  font-size:40px;
-  outline:0;
+  background: transparent;
+  border: 0;
+  color: rgb(218, 134, 115);
+  flex-grow: 1;
+  font-size: 40px;
+  outline: 0;
   padding-left: 43px;
 }
 
@@ -147,44 +150,44 @@ body {
   text-align: center;
 }
 
-.todoListItem input[type=checkbox] {
-  display:none;
+.todoListItem input[type="checkbox"] {
+  display: none;
 }
 
-.todoListItem input[type=checkbox]:checked ~ .replace i {
-  color:rgb(10, 184, 203);
-  display:inline;
+.todoListItem input[type="checkbox"]:checked ~ .replace i {
+  color: rgb(10, 184, 203);
+  display: inline;
   font-weight: bolder;
 }
 
-.todoListItem input[type=checkbox]:checked ~ input {
-  color:rgb(218,134,115);
+.todoListItem input[type="checkbox"]:checked ~ input {
+  color: rgb(218, 134, 115);
   opacity: 0.3;
   text-decoration: line-through;
 }
 
-.todoListItem input[type=checkbox]:checked ~ input:focus {
+.todoListItem input[type="checkbox"]:checked ~ input:focus {
   color: #4d4d4d;
-  text-decoration:none;
+  text-decoration: none;
 }
 
 .replace {
-  height:30px;
-  width:30px;
-  border:1px solid #d8d8d8;
-  border-radius:50%;
-  margin:0 15px 0 7px;
-  text-align:center;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #d8d8d8;
+  border-radius: 50%;
+  margin: 0 15px 0 7px;
+  text-align: center;
 }
 
 .replace i {
-  display:none;
-  line-height:34px;
+  display: none;
+  line-height: 34px;
 }
 
 .todoListItem li button {
   background: transparent;
-  color: rgba(175,47,47,.50);
+  color: rgba(175, 47, 47, 0.5);
   border: 0;
   outline: 0;
   padding: 10px;
@@ -197,11 +200,11 @@ body {
 
 .todoListItem li button:focus {
   font-size: 28px;
-  transition: font-size .1 ease;
+  transition: font-size 0.1 ease;
 }
 
 .todoListItem li:hover button {
-  display:inline;
+  display: inline;
 }
 
 /* Footer Styling */
@@ -209,61 +212,65 @@ footer {
   align-items: center;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  border-top: .5px solid rgba(208, 207, 169, .5);
+  border-top: 0.5px solid rgba(208, 207, 169, 0.5);
   display: flex;
-  font-size:14px;
-  font-weight:300;
+  font-size: 14px;
+  font-weight: 300;
   justify-content: space-between;
   margin-left: 35px;
   width: 90.5%;
 }
 
 form footer div {
-  display:flex;
+  display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
 }
 
 form footer p {
-  margin-left:20px;
-  color: rgba(175,47,47,.50); 
+  margin-left: 20px;
+  color: rgba(175, 47, 47, 0.5);
 }
 
 form footer button {
-  background:transparent;
-  border:0;
-  color:lightgray;
-  cursor:pointer;
+  background: transparent;
+  border: 0;
+  color: lightgray;
+  cursor: pointer;
   font-weight: inherit;
-  height:26px;
+  height: 26px;
 }
 
 form footer button {
-  margin-right:20px;
-  opacity: .8;
+  margin-right: 20px;
+  opacity: 0.8;
 }
 
 form footer button.active {
-  border-left:1px solid rgba(175,47,47,.50);
-  border-right:1px solid rgba(175,47,47,.50);
-  color: rgba(175,47,47,.50);
+  border-left: 1px solid rgba(175, 47, 47, 0.5);
+  border-right: 1px solid rgba(175, 47, 47, 0.5);
+  color: rgba(175, 47, 47, 0.5);
   opacity: 1;
-  
 }
 
-
 form footer #clearCompleted {
-  color: rgba(175,47,47,.50);
+  color: rgba(175, 47, 47, 0.5);
   opacity: 1;
 }
 
 button {
-  outline:0;
+  outline: 0;
 }
 
+.on {
+  color: blue;
+}
+
+.off {
+  color: green;
+}
 /* List Options Styling */
- ::placeholder {
+::placeholder {
   color: gray;
-  opacity: .3
+  opacity: 0.3;
 }
-
